@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
-import { getAuth, createUserWithEmailAndPassword,onAuthStateChanged,signInWithEmailAndPassword, signOut,
+import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut,
     signInWithPopup, GoogleAuthProvider
 
 } from "firebase/auth";
@@ -88,21 +88,4 @@ export const logOut = ()=>{
       });
 }
 
-
-onAuthStateChanged(auth, async (user) => {
-    console.log("Auth state changed");
-    if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/auth.user
-      const uid = user.uid;
-      console.log({uid});
-      console.log({user});
-      const token = await user.getIdToken();
-      // ...
-    } else {
-      // User is signed out
-      // ...
-      console.log("Sign-out successful");
-    }
-  });
 // const analytics = getAnalytics(app);
