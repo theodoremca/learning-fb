@@ -1,10 +1,10 @@
-import { AuthPage } from "./page/AuthPage";
 import { AuthProvider } from "./Provider";
+import { AppRouter } from "./routes";
 
 function App() {
   return (
     <AuthProvider>
-      <AuthPage />;
+      <AppRouter />
     </AuthProvider>
   );
 }
